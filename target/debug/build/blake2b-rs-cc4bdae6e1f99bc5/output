@@ -1,0 +1,26 @@
+TARGET = Some("x86_64-apple-darwin")
+OPT_LEVEL = Some("0")
+HOST = Some("x86_64-apple-darwin")
+CC_x86_64-apple-darwin = None
+CC_x86_64_apple_darwin = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-apple-darwin = None
+CFLAGS_x86_64_apple_darwin = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("true")
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2,sse3,ssse3")
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-o" "/Users/verloop/web3/winterfell-nft/target/debug/build/blake2b-rs-cc4bdae6e1f99bc5/out/BLAKE2/sse/blake2b.o" "-c" "BLAKE2/sse/blake2b.c"
+exit status: 0
+AR_x86_64-apple-darwin = None
+AR_x86_64_apple_darwin = None
+HOST_AR = None
+AR = None
+running: "ar" "cq" "/Users/verloop/web3/winterfell-nft/target/debug/build/blake2b-rs-cc4bdae6e1f99bc5/out/libblake2b.a" "/Users/verloop/web3/winterfell-nft/target/debug/build/blake2b-rs-cc4bdae6e1f99bc5/out/BLAKE2/sse/blake2b.o"
+exit status: 0
+running: "ar" "s" "/Users/verloop/web3/winterfell-nft/target/debug/build/blake2b-rs-cc4bdae6e1f99bc5/out/libblake2b.a"
+exit status: 0
+cargo:rustc-link-lib=static=blake2b
+cargo:rustc-link-search=native=/Users/verloop/web3/winterfell-nft/target/debug/build/blake2b-rs-cc4bdae6e1f99bc5/out

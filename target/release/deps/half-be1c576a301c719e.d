@@ -1,0 +1,12 @@
+/Users/verloop/web3/winterfell-nft/target/release/deps/half-be1c576a301c719e.rmeta: /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/lib.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat/convert.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16/convert.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/slice.rs
+
+/Users/verloop/web3/winterfell-nft/target/release/deps/libhalf-be1c576a301c719e.rlib: /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/lib.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat/convert.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16/convert.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/slice.rs
+
+/Users/verloop/web3/winterfell-nft/target/release/deps/half-be1c576a301c719e.d: /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/lib.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat/convert.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16/convert.rs /Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/slice.rs
+
+/Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/lib.rs:
+/Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat.rs:
+/Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/bfloat/convert.rs:
+/Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16.rs:
+/Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/binary16/convert.rs:
+/Users/verloop/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.8.2/src/slice.rs:
