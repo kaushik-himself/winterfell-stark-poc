@@ -1,23 +1,35 @@
-# Winterfell NFT
+# Winterfell STARK PoC
 
 A PoC demonstrating a Stark prover/verifier for NFT transactions using the [Winterfell library](https://github.com/novifinancial/winterfell) for Stark implementation.
 
+The PoC demonstrates the Validium mode of scaling NFT minting using ZK-STARKs. NFTs are minted and stored in a DB. A proof is generated for a batch of NFT. This proof can be published to an L1 blockchain. The L1 blockchain runs a verifier smart contract which imports the Winterfell AIR and Verifier exposed in this PoC.
+
 ## Functionalities
 
-- [x] NFT Minting
-- [ ] NFT Transactions
-- [x] Stark prover/verifier for NFTs minted
-- [ ] Update proof on NFT transfer
+For the sake of simplicity the PoC only demonstrates NFT minting and its proof and verification. However, the same can be applied to any generic transaction.
+
+## Design
+
+The PoC demonstrates a Validium model of scaling.
+
+- The minted tokens are simply stored into a SQLite DB for now.
+- A ZK-STARK proof is generated periodically for a batch of minted tokens. This proof can be published to an L1 blockchain.
+- The L1 blockchain runs the verifier in its Rust smart contract after importing the verifier and AIR winterfell crates.
+
+## About Winterfell
+
+The winterfell library requires a developer to create an AIR (Arithmetization) of an algorithm. The remaining five steps required to produce STARK proofs - Low degree extension, constraint evaluation, constraint composition and low-degree testing are handled by the library internally.  
+The library also compiles to cleanly provide prover, verifier and AIR crates, which can later be imported and used from different programs.
 
 ## Implementation Details
 
-Each NFT that is minted is added to a Merkle Tree. The Merkle Tree provides functionality to prove that a particular element exists in the tree.
+The PoC involves 4 steps:
 
-A Stark proof is generated for each NFT that exists in the Merkle Tree. A Stark verifier can optimally check that the Stark proof is valid and the NFT really does exist in the Merkle Tree.
-
-Any transaction - (both fungible and non-fungible) token minting, transfer - leads to an addition/update of the Merkle Tree. A new proof is generated each time a new leaf is added or an existing leaf is updated in the tree.
-
-A mapping is stored (to be implemented) between each token and its corresponding proof.
+- Create an account and mint NFTs.
+- Run an accumulator to add the NFTs to a merkle tree.
+- Create a ZK STARK proof of the NFTs existense as a leaf of the merkle tree.
+  - Implement an AIR for Merkle proofs.
+- Verify the STARK proof.
 
 For the sake of simplicity, the minted NFTs and their metadata are stored in a SQLite DB.
 
@@ -27,6 +39,8 @@ When N NFTs are minted, validating the proof of each NFT added to a Merkle Tree 
 Using Starks we optimize this further and guarantee sub-logarthmic time in validating each proof.
 
 ## Limitations
+
+Since this is a validium, the design has data availability issues. This can be fixed by implementing a ZK rollup.
 
 2<sup>15</sup> is the maximum number of NFTs supported by the Merkle Tree.
 This is an arbitrary figure hard-coded for convenience and can be changed through a few trivial updates.
