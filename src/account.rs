@@ -1,6 +1,4 @@
 use rusqlite::{Connection, Result};
-use serde::{Deserialize, Serialize};
-use std::io::{self, Write};
 
 struct Account {
   id: i32,

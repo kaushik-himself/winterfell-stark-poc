@@ -3,8 +3,7 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 
-use super::{rescue, HASH_STATE_WIDTH, RATE_WIDTH, DIGEST_SIZE, HASH_CYCLE_LEN,
-  TRACE_WIDTH};
+use super::{rescue, HASH_CYCLE_LEN, HASH_STATE_WIDTH, TRACE_WIDTH};
 use winterfell::math::{fields::f128::BaseElement, FieldElement};
 use winterfell::{
     Air, AirContext, Assertion, ByteWriter, EvaluationFrame, ProofOptions, Serializable, TraceInfo,

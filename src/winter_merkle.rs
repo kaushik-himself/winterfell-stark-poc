@@ -1,12 +1,10 @@
-use std::mem;
-use std::slice;
 use winterfell::{
-  crypto::{Digest, MerkleTree},
-  math::{fields::f128::BaseElement, log2, FieldElement, StarkField},
-  FieldExtension, HashFunction, ProofOptions, Prover, StarkProof, Trace, TraceTable, VerifierError,
+  crypto::MerkleTree,
+  math::{fields::f128::BaseElement, FieldElement},
+  FieldExtension, HashFunction, ProofOptions, Prover, Trace, TraceTable,
 };
 
-use rusqlite::{Connection, Result};
+use rusqlite::Connection;
 
 mod rescue;
 use rescue::{Hash, Rescue128};
@@ -20,10 +18,10 @@ use air::{MerkleAir, PublicInputs};
 /// Function state is set to 6 field elements or 96 bytes; 4 elements are reserved for rate
 /// and 2 elements are reserved for capacity.
 pub const HASH_STATE_WIDTH: usize = 6;
-pub const RATE_WIDTH: usize = 4;
+// pub const RATE_WIDTH: usize = 4;
 
 /// Two elements (32-bytes) are returned as digest.
-const DIGEST_SIZE: usize = 2;
+// const DIGEST_SIZE: usize = 2;
 
 /// Minimum cycle length required to describe Rescue permutation.
 pub const HASH_CYCLE_LEN: usize = 8;
@@ -121,7 +119,7 @@ pub fn generate_proof(token_id: usize) {
     tree_root: merkle_tree.root().to_elements(),
   };
   // Stark proof
-  let verification = match winterfell::verify::<MerkleAir>(stark_proof, pub_inputs) {
+  let _ = match winterfell::verify::<MerkleAir>(stark_proof, pub_inputs) {
     Ok(_) => println!("Verified the stark proof successfully"),
     Err(error) => panic!("Verification failed with error {:?}", error),
   };

@@ -1,10 +1,4 @@
 use rusqlite::{named_params, Connection, Result};
-use serde::{Deserialize, Serialize};
-
-struct Account {
-  id: i32,
-  nfts: String,
-}
 
 pub fn mint(to: i32, token_uri: &str) -> Result<()> {
   let conn = Connection::open("nft.db")?;
