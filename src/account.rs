@@ -12,10 +12,7 @@ pub fn create_account() -> Result<()> {
 
   let nft_arr: Vec<String> = [].to_vec();
   let nfts = serde_json::to_string(&nft_arr).unwrap();
-  conn.execute(
-    "INSERT INTO Account (nfts) values (?1)",
-    &[&nfts]
-  )?;
+  conn.execute("INSERT INTO Account (nfts) values (?1)", &[&nfts])?;
   println!("Created account with id {}", conn.last_insert_rowid());
 
   Ok(())

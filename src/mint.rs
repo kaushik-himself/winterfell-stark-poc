@@ -20,7 +20,8 @@ pub fn mint(to: i32, token_uri: &str) -> Result<()> {
     named_params! {
       ":uri": token_uri,
       ":owner": to,
-    })?;
+    },
+  )?;
   let token_id = conn.last_insert_rowid();
 
   println!("Minted a fresh NFT {}", token_id);

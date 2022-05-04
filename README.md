@@ -2,7 +2,7 @@
 
 A PoC demonstrating a Stark prover/verifier for NFT transactions using the [Winterfell library](https://github.com/novifinancial/winterfell) for Stark implementation.
 
-ttttttt## Functionalities
+## Functionalities
 
 - [x] NFT Minting
 - [ ] NFT Transactions

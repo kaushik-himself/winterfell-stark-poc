@@ -1,6 +1,6 @@
-use std::io::{self, Write};
 use rusqlite::{Connection, Result};
 use std::env;
+use std::io::{self, Write};
 
 mod account;
 use account::check_balance;
@@ -9,11 +9,11 @@ use account::create_account;
 mod mint;
 use mint::mint;
 
-mod merkle_proof;
-use merkle_proof::build_merkle_tree;
+// mod merkle_proof;
+// use merkle_proof::build_merkle_tree;
 
-mod merkle_proof_smt;
-use merkle_proof_smt::construct_smt;
+// mod merkle_proof_smt;
+// use merkle_proof_smt::construct_smt;
 
 mod winter_merkle;
 use winter_merkle::generate_proof;
@@ -44,13 +44,13 @@ fn main() -> Result<()> {
         check_balance(account_id)?;
     }
 
-    if args[1] == "gen_mt" {
-        build_merkle_tree();
-    }
+    // if args[1] == "gen_mt" {
+    //     build_merkle_tree();
+    // }
 
-    if args[1] == "gen_smt" {
-        construct_smt();
-    }
+    // if args[1] == "gen_smt" {
+    //     construct_smt();
+    // }
 
     if args[1] == "prove_verify" {
         assert_eq!(args.len(), 3, "Please pass the token ID to be verified");
